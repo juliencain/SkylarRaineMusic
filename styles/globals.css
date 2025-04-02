@@ -1,22 +1,154 @@
+/* Import Bootstrap */
 @import 'bootstrap/dist/css/bootstrap.css';
+@import url('https://fonts.googleapis.com/css2?family=Monoton&family=UnifrakturMaguntia&display=swap');
 
-html,
-body {
+/* Reset default margins & paddings */
+html, body {
   padding: 0;
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  font-family: 'Monoton', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
 }
 
-a {
-  color: inherit;
-  text-decoration: none;
-}
-
-* {
-  box-sizing: border-box;
-}
-
+/* Fullscreen background with blur */
 body {
-  background-color: #88effd;
+  position: relative;
+  background: url('https://source.boomplaymusic.com/group10/M00/01/11/7142c061fbc24b6da34e29c8246c4f06_320_320.png') no-repeat center center fixed;
+  background-size: cover;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  width: 100vw;
+  margin: 0;
+  padding: 0;
+}
+
+/* Blurred background overlay */
+body::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: inherit;
+  filter: blur(5px); /* Adjust blur intensity */
+  z-index: -1;
+}
+
+/* Fullscreen Navbar */
+.navbar {
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  padding: 20px 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: rgba(0, 0, 0, 0.4); /* Transparent black background */
+  backdrop-filter: blur(15px); /* Enhanced blur for the background */
+  color: white;
+  z-index: 10;
+  border: none;
+  border-bottom: 2px solid rgba(255, 255, 255, 0.2); /* Subtle border for separation */
+  border-radius: 10px; /* Rounded corners for the navbar */
+  box-shadow: 0px 4px 30px rgba(0, 0, 0, 0.5); /* Add subtle shadow for depth */
+  transition: all 0.3s ease-in-out; /* Smooth transition */
+}
+
+.navbar:hover {
+  background: rgba(0, 0, 0, 0.6); /* Darker background on hover */
+  box-shadow: 0px 6px 50px rgba(0, 0, 0, 0.7); /* Deeper shadow on hover */
+}
+
+/* Navbar Links */
+.navbar a {
+  color: white;
+  text-decoration: none;
+  padding: 10px 20px;
+  transition: color 0.3s ease, transform 0.3s ease; /* Smooth color transition and hover effects */
+  font-size: 1.1rem;
+  font-weight: bold;
+}
+
+.navbar a:hover {
+  color: #88effd; /* Hover color */
+  transform: scale(1.1); /* Slight zoom effect on hover */
+}
+
+/* Navbar Brand */
+.navbar .brand {
+  font-size: 1.5rem;
+  font-weight: bold;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: #ff9d00;
+  transition: all 0.3s ease;
+}
+
+.navbar .brand:hover {
+  color: #ff5e00; /* Hover effect for brand */
+  transform: scale(1.1); /* Slight zoom effect for the brand */
+}
+
+
+/* Fullscreen content */
+.container {
+  width: 100vw;
+  height: 10vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  position: relative;
+  background-color: rgba(0, 0, 0, 0); /* Ensure container background is transparent */
+}
+
+/* Glassmorphic Content Box */
+.content-box {
+  max-width: 600px;
+  padding: 30px;
+  background: rgba(11, 4, 4, 0.1); /* Frosted glass effect */
+  backdrop-filter: blur(10px);
+  border-radius: 12px;
+  box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+/* Buttons */
+button, .btn {
+  padding: 12px 24px;
+  font-size: 1rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  border-radius: 8px;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+  position: relative;
+  background: linear-gradient(135deg, #ccb8bd, #22110e);
+  color: white;
+  box-shadow: 0px 4px 15px rgba(17, 17, 17, 0.4);
+}
+
+button:hover, .btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0px 6px 20px rgba(5, 5, 5, 0.6);
+}
+
+/* Footer */
+.footer {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  text-align: center;
+  padding: 10px;
+  background: rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(10px);
+  color: white;
 }
