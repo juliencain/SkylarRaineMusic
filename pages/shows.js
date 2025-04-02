@@ -1,8 +1,7 @@
-import React from 'react';
 import { Button } from 'react-bootstrap';
-import { signIn } from '../utils/auth';
+import { signOut } from '../utils/auth';
 
-function Signin() {
+function Shows() {
   return (
     <div
       className="text-center d-flex flex-column justify-content-center align-content-center"
@@ -13,13 +12,14 @@ function Signin() {
         margin: '0 auto',
       }}
     >
-      <h1>oh its you...</h1>
-      <p>i guess click the button.</p>
-      <Button type="button" size="lg" className="copy-btn" onClick={signIn}>
-        ALL THINGS TINY SKYLAR
+
+      <h1>SHOWS</h1>
+      <h1>heres some shows coming up.</h1>
+      <Button variant="danger" type="button" size="lrg" className="copy-btn" onClick={signOut}>
+        GTFO
       </Button>
     </div>
   );
 }
 
-export default Signin;
+export default Shows;
