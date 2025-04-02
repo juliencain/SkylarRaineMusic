@@ -17,12 +17,12 @@ function Home() {
         maxWidth: '400px',
         margin: '0 auto',
       }}
-    >
+    
       <p>yuh</p>
       <h1>sky</h1>
       <Button variant="danger" type="button" size="lrg" className="copy-btn" onClick={signOut}>
         GTFO
-      </Button>
+
     </div>
   );
 }
